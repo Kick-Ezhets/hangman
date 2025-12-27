@@ -1,13 +1,15 @@
+import random
+
 def hangman(word):
     wrong = 0
     stages = ["",
-              "_____     ",
-              "|    |    ",
-              "|    |    ",
-              "|    O    ",
-              "|   /|\   ",
-              "|   / \   ",
-              "|         "]
+              " ______   ",
+              " |    |   ",
+              " |    |   ",
+              " |    O   ",
+              " |   /|\  ",
+              " |   / \  ",
+              "_|________"]
     rletters = list(word)
     board = ["_"] * len(word)
     win = False
@@ -35,4 +37,6 @@ def hangman(word):
     if not win:
         print("Вы проиграли! Было загадано слово: {}.".format(word))
 
-hangman("кот")
+words = ["кот", "собака", "хомяк", "черепаха", "попугай"]
+word = random.choice(words)
+hangman(word)
